@@ -38,24 +38,24 @@ Character_Data:
         Zwerg: 59320169-4b84-4a31-b2d0-eb4640866ebc
 
     CharakterInfo:
-    - "<gold><bold>۞<gold> >> Charakter Info << <bold>۞"
-    - "<gold><bold>۞<gold> >> Name:       <green><player.flag[<[Profil]>.meta.name]>"
-    - "<gold><bold>۞<gold> >> Volk:        <green><player.flag[<[Profil]>.Volk]>"
-    - "<gold><bold>۞<gold> >> Level:      <green><player.flag[<[Profil]>.Profil.level]>"
-    - "<gold><bold>۞<gold> >> Klasse:     <green><player.flag[<[Profil]>.Class.current_class]>"
+    - "<gold>>> Charakter Info <<"
+    - "<gold>>> <green><player.flag[<[Profil]>.meta.name]>"
+    - "<gold>>> <green><player.flag[<[Profil]>.Volk]>"
+    - "<gold>>> <green><player.flag[<[Profil]>.Profil.level]>"
+    - "<gold>>> <green><player.flag[<[Profil]>.Class.current_class]>"
     - <empty>
     - <empty>
     - "<green>[ < auswählen] <red>[löschen > ]"
     - "erstellt vor <player.flag[<[Profil]>.meta.creation_time].to_zone[+1].from_now.formatted>"
 
     Wiederherrstellen:
-    - "<gold><bold>۞<gold> Lässt dich deinen letzten Charakter wiederherstellen."
+    - "<gold>Lässt dich deinen letzten Charakter wiederherstellen."
     - <empty>
-    - "<gold><bold>۞<gold> <player.flag[deleted_profilslot].if_null[<gold>-<empty>]>"
-    - "<gold><bold>۞<gold> <player.flag[last_deleted.Race].if_null[<gold>-<empty>]>"
-    - "<gold><bold>۞<gold> <player.flag[last_deleted.Level].if_null[<gold>-<empty>]>"
-    - "<gold><bold>۞<gold> <player.flag[last_deleted.Difficulty].if_null[<gold>-<empty>]>"
-    - "<gold><bold>۞<gold> <green> Klicken zum wiederherstellen"
+    - "<gold><player.flag[deleted_profilslot].if_null[<gold>-<empty>]>"
+    - "<gold><player.flag[last_deleted.Race].if_null[<gold>-<empty>]>"
+    - "<gold><player.flag[last_deleted.Level].if_null[<gold>-<empty>]>"
+    - "<gold><player.flag[last_deleted.Difficulty].if_null[<gold>-<empty>]>"
+    - "<gold><green> Klicken zum wiederherstellen"
 
     Charakter:
         meta:

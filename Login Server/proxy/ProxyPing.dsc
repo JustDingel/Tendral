@@ -3,12 +3,12 @@ Bungeelist:
     debug: false
     events:
         after delta time minutely every:10:
-        - if <bungee.server> == Login:
+        - if <bungee.server> == Lobby:
             - run bungeemaxslot
             - run bungeeonlineplayer
             - run bungeestats
         on proxy server list ping:
-        - if <bungee.server> == Login-Server:
+        - if <bungee.server> == Lobby:
             - define 1 "<gold><bold>                <gray>play.<gold><bold>TENDRAL<gray>.de           <gray>v0.0.1-A <yellow>⭐"
             - define 2 "<gold><bold>                New Server Yeay!"
             - determine passively MOTD:<[1]><n><[2]>
@@ -18,7 +18,7 @@ BungeeMaxSlot:
     type: task
     debug: false
     script:
-    - if <bungee.server> == Login:
+    - if <bungee.server> == Lobby:
         - foreach <bungee.list_servers>:
             - ~bungeetag server:<[value]> <server.max_players> save:max_players
             - define max_players:+:<entry[max_players].result>
@@ -30,7 +30,7 @@ BungeeOnlinePlayer:
     type: task
     debug: false
     script:
-    - if <bungee.server> == Login:
+    - if <bungee.server> == Lobby:
         - foreach <bungee.list_servers>:
             - ~bungeetag server:<[value]> <server.online_players> save:online_players
             - define online 0
@@ -43,7 +43,7 @@ BungeeStats:
     type: task
     debug: false
     script:
-    - if <bungee.server> == Login:
+    - if <bungee.server> == Lobby:
         - foreach <bungee.list_servers>:
             - ~bungeetag server:<[value]> <server.max_players> save:max_players
             - ~bungeetag server:<[value]> <server.online_players> save:online_players

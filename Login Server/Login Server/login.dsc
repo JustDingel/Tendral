@@ -6,10 +6,6 @@ Login_Server:
         - determine none
         on player quits:
         - determine none
-        after bungee player joins network:
-        - flag <player> first_login:true
-        after bungee player leaves network:
-        - flag <player> first_login:!
         after player joins:
         - if <player.has_flag[first_login]>:
             - determine cancelled

@@ -9,11 +9,11 @@ EXP_TEST:
 
 EXP_Anzeige:
     type: world
-    debug: true
+    debug: false
     events:
         after delta time secondly every:1:
         - if !<server.online_players.is_empty>:
-            - actionbar "<player.flag[EXP].proc[my_proc2]> <player.flag[level]> <player.flag[EXP]>" targets:<server.online_players> per_player
+            - actionbar "<player.flag[EXP].proc[my_proc]> <player.flag[level]> <player.flag[EXP]>" targets:<server.online_players> per_player
             - foreach <server.online_players>:
                 - run my_task def:<[value]>|<[value].flag[EXP]>|<[value].flag[Level]>
         on player joins:
@@ -38,7 +38,7 @@ my_proc:
 
 my_task:
     type: task
-    debug: true
+    debug: false
     definitions: Player|EXP[Player EXP]|PLevel
     script:
     - define base_exp 200

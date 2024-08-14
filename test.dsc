@@ -13,7 +13,7 @@ EXP_Anzeige:
     events:
         after delta time secondly every:1:
         - if !<server.online_players.is_empty>:
-            - actionbar "<player.flag[EXP].proc[my_proc]> <player.flag[level]> <player.flag[EXP]>" targets:<server.online_players> per_player
+            - actionbar "<player.flag[EXP].proc[my_proc2]> <player.flag[level]> <player.flag[EXP]>" targets:<server.online_players> per_player
             - foreach <server.online_players>:
                 - run my_task def:<[value]>|<[value].flag[EXP]>|<[value].flag[Level]>
         on player joins:
@@ -48,5 +48,17 @@ my_task:
         - define Level <[Level].add[1]>
         - define base_exp <[base_exp].mul[<[factor]>]>
         - if <[PLevel]> < <[Level]>:
+            - if <[Level]> >= 50:
+                - define Level 50
+                - while stop
             - narrate "Level Up Bitch" targets:<[Player]>
     - flag <[Player]> Level:<[Level]>
+
+#narrate "<element[15000].ln.mul[2.71].round_down>"
+
+my_proc2:
+    type: procedure
+    debug: false
+    definitions: EXP
+    script:
+    - determine <element[<[EXP]>].div[250].add[1].sqrt.round_down>

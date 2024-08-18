@@ -7,6 +7,41 @@ EXP_TEST:
     script:
     - flag <player> EXP:<context.args.get[1]>
 
+PROFILE_TEST:
+    type: command
+    name: profil
+    description: Does something
+    usage: /profil <&lt>myArg1<&gt>
+    permission: dscript.mycmd
+    tab completions:
+        1: add|take
+    script:
+    - run database_profils def:<player.uuid>|<context.args.get[1]>
+
+PLAYER_PROFILE_TEST:
+    type: command
+    name: setprofil
+    description: Does something
+    usage: /setprofil <&lt>arg<&gt>
+    permission: dscript.mycmd
+    tab completions:
+        1: 1|2|3|4|5|6
+        2: Name
+        3: Class
+    script:
+    - run database_player_profiles def:<player.uuid>|<context.args.get[1]>|<context.args.get[2]>|<context.args.get[3]>
+
+PPTest:
+    type: command
+    name: ProfilInfo
+    description: Does something
+    usage: /ProfilInfo <&lt>arg<&gt>
+    permission: dscript.mycmd
+    script:
+    - run database_player_profiles_read def:<player.uuid>
+
+
+
 EXP_Anzeige:
     type: world
     debug: false
